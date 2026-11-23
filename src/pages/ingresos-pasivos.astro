@@ -1,0 +1,484 @@
+
+---
+const platforms = [
+  {
+    number: "01",
+    name: "Compartir conexión",
+    description: "Aplicaciones que permiten obtener recompensas compartiendo parte de tu conexión a Internet.",
+    tag: "INGRESOS AUTOMÁTICOS",
+    icon: "↗"
+  },
+  {
+    number: "02",
+    name: "Aplicaciones pasivas",
+    description: "Herramientas y aplicaciones que ofrecen recompensas por mantener determinadas actividades.",
+    tag: "APLICACIONES",
+    icon: "◈"
+  },
+  {
+    number: "03",
+    name: "Recompensas y bonificaciones",
+    description: "Plataformas con programas de recompensas, bonificaciones y oportunidades de ingresos.",
+    tag: "RECOMPENSAS",
+    icon: "✦"
+  },
+  {
+    number: "04",
+    name: "Otras oportunidades",
+    description: "Descubre otros sistemas y plataformas para explorar diferentes fuentes de ingresos.",
+    tag: "OPORTUNIDADES",
+    icon: "∞"
+  }
+];
+---
+
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Descubre aplicaciones y plataformas de ingresos pasivos por Internet. Tutoriales, oportunidades y pruebas de pagos en Infinito Dinero." />
+  <meta name="theme-color" content="#080c10" />
+  <title>Ingresos pasivos | Infinito Dinero</title>
+</head>
+
+<body>
+  <header class="header">
+    <a href="/" class="brand">
+      <span class="logo">∞</span>
+      INFINITO <strong>DINERO</strong>
+    </a>
+
+    <nav>
+      <a href="/">Inicio</a>
+      <a href="/#categorias">Categorías</a>
+      <a href="/trading/">Trading</a>
+      <a href="/#pagos">Pagos</a>
+      <a href="/#tutoriales">Tutoriales</a>
+    </nav>
+
+    <a class="youtube" href="https://youtube.com/@infinitodinero" target="_blank" rel="noopener">
+      YouTube ↗
+    </a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <div class="eyebrow">✦ INFINITO DINERO / INGRESOS PASIVOS</div>
+        <h1>Descubre nuevas formas de generar <span>ingresos pasivos.</span></h1>
+        <p>
+          Explora aplicaciones y plataformas que permiten obtener
+          recompensas y generar ingresos por Internet. Aprende cómo
+          funcionan y descubre nuevas oportunidades.
+        </p>
+
+        <div class="actions">
+          <a href="#plataformas" class="primary">Explorar plataformas →</a>
+          <a href="#como-funciona" class="secondary">Cómo funciona</a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <span class="small-label">INFINITO DINERO</span>
+        <div class="infinity">∞</div>
+        <div class="card-bottom">
+          <span>OPORTUNIDADES</span>
+          <span> SIN LÍMITES</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="intro" id="como-funciona">
+      <div>
+        <span class="eyebrow">01 / DESCUBRE</span>
+        <h2>¿Qué son los ingresos pasivos?</h2>
+      </div>
+      <p>
+        Son formas de obtener ingresos que pueden requerir una
+        participación inicial y después un mantenimiento reducido.
+        Algunas plataformas permiten generar recompensas mediante
+        aplicaciones, recursos digitales o compartiendo conexión.
+        Los resultados dependen de cada servicio y no están garantizados.
+      </p>
+    </section>
+
+    <section class="platforms" id="plataformas">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">02 / EXPLORA</span>
+          <h2>Tipos de oportunidades</h2>
+        </div>
+        <p>Encuentra diferentes alternativas para descubrir nuevas fuentes de ingresos.</p>
+      </div>
+
+      <div class="grid">
+        {platforms.map((platform) => (
+          <article class="category-card">
+            <div class="icon">{platform.icon}</div>
+            <span class="number">{platform.number} / {platform.tag}</span>
+            <h3>{platform.name}</h3>
+            <p>{platform.description}</p>
+            <a href="#tutoriales">Próximamente →</a>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="tutorials" id="tutoriales">
+      <div>
+        <span class="eyebrow">03 / APRENDE</span>
+        <h2>Tutoriales y pruebas de pago</h2>
+        <p>
+          Aprende a registrarte, configurar las aplicaciones y conocer
+          cómo funcionan sus sistemas de recompensas.
+        </p>
+        <a class="primary" href="https://youtube.com/@infinitodinero" target="_blank" rel="noopener">
+          Ver tutoriales en YouTube ↗
+        </a>
+      </div>
+
+      <div class="tutorial-box">
+        <span class="play">▶</span>
+        <h3>Aprende paso a paso</h3>
+        <p>Tutoriales, experiencias y pagos recibidos.</p>
+      </div>
+    </section>
+
+    <section class="notice">
+      <span>ⓘ</span>
+      <p>
+        <strong>Información importante:</strong> Las plataformas pueden
+        cambiar sus condiciones, recompensas y métodos de pago. Ningún
+        ingreso está garantizado. Investiga cada servicio antes de
+        registrarte y protege tus datos personales.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <a href="/" class="brand">
+      <span class="logo">∞</span>
+      INFINITO <strong>DINERO</strong>
+    </a>
+    <p>Descubre oportunidades. Aprende. Explora.</p>
+    <span>© 2026 Infinito Dinero</span>
+  </footer>
+</body>
+</html>
+
+<style>
+  :root {
+    color-scheme: dark;
+    --bg: #080c10;
+    --surface: #111820;
+    --border: #27343d;
+    --green: #24e393;
+    --text: #f2f5f7;
+    --muted: #aab8c5;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  a { text-decoration: none; color: inherit; }
+
+  .header {
+    min-height: 74px;
+    padding: 14px 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    border-bottom: 1px solid var(--border);
+    background: #080c10;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: .5px;
+    white-space: nowrap;
+  }
+
+  .brand strong { color: var(--green); }
+
+  .logo {
+    color: var(--green);
+    font-size: 29px;
+    line-height: 1;
+  }
+
+  nav { display: flex; gap: 28px; }
+
+  nav a {
+    font-size: 13px;
+    color: #d6e0e8;
+  }
+
+  nav a:hover { color: var(--green); }
+
+  .youtube, .primary {
+    background: var(--green);
+    color: #06130d;
+    padding: 14px 20px;
+    border-radius: 7px;
+    font-size: 13px;
+    font-weight: 700;
+  }
+
+  .hero {
+    padding: 100px 8%;
+    min-height: 510px;
+    display: grid;
+    grid-template-columns: 1.3fr .8fr;
+    align-items: center;
+    gap: 65px;
+    background: radial-gradient(ellipse at 75% 40%, #102c25 0%, #080c10 60%);
+  }
+
+  .eyebrow {
+    color: var(--green);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+  }
+
+  h1 {
+    font-size: clamp(38px, 5vw, 64px);
+    line-height: 1.08;
+    letter-spacing: -2px;
+    margin: 24px 0;
+    max-width: 680px;
+  }
+
+  h1 span { color: var(--green); }
+
+  .hero-content > p, .intro > p {
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.9;
+    max-width: 600px;
+  }
+
+  .actions {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+  }
+
+  .secondary {
+    border: 1px solid var(--border);
+    padding: 14px 20px;
+    border-radius: 7px;
+    font-size: 13px;
+  }
+
+  .hero-card {
+    min-height: 280px;
+    padding: 30px;
+    border: 1px solid #315247;
+    border-radius: 16px;
+    background: linear-gradient(145deg, #142d27, #111820);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .small-label, .card-bottom {
+    color: #b5c8c1;
+    font-size: 10px;
+    letter-spacing: 2px;
+  }
+
+  .infinity {
+    text-align: center;
+    font-size: 120px;
+    color: var(--green);
+    font-weight: 700;
+  }
+
+  .card-bottom {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #315247;
+    padding-top: 18px;
+  }
+
+  .card-bottom span:last-child { color: var(--green); }
+
+  .intro, .platforms, .tutorials {
+    padding: 85px 8%;
+  }
+
+  .intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+  }
+
+  h2 {
+    font-size: clamp(29px, 4vw, 42px);
+    letter-spacing: -1px;
+    margin: 16px 0;
+  }
+
+  .section-heading {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 35px;
+    margin-bottom: 40px;
+  }
+
+  .section-heading > p {
+    color: var(--muted);
+    line-height: 1.8;
+    max-width: 370px;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+  }
+
+  .category-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 25px 22px;
+    min-height: 255px;
+    transition: transform .2s, border-color .2s;
+  }
+
+  .category-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--green);
+  }
+
+  .icon {
+    font-size: 31px;
+    color: var(--green);
+    margin-bottom: 25px;
+  }
+
+  .number {
+    color: #91a5b5;
+    font-size: 10px;
+    letter-spacing: 1px;
+  }
+
+  h3 { font-size: 18px; }
+
+  .category-card p, .tutorial-box p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  .category-card > a {
+    display: inline-block;
+    margin-top: 12px;
+    color: var(--green);
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+  .tutorials {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 65px;
+    background: #0d141a;
+  }
+
+  .tutorials > div > p {
+    color: var(--muted);
+    line-height: 1.9;
+    margin-bottom: 28px;
+  }
+
+  .tutorial-box {
+    min-height: 210px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 35px;
+    background: linear-gradient(140deg, #142b24, #111820);
+  }
+
+  .play {
+    display: grid;
+    place-items: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: var(--green);
+    color: #06130d;
+  }
+
+  .notice {
+    margin: 55px 8%;
+    padding: 20px;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    display: flex;
+    gap: 15px;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.8;
+  }
+
+  .notice > span { color: var(--green); font-size: 20px; }
+
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 35px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  footer p, footer > span {
+    color: var(--muted);
+    font-size: 12px;
+  }
+
+  @media (max-width: 900px) {
+    .grid { grid-template-columns: repeat(2, 1fr); }
+    .hero { gap: 30px; padding: 75px 6%; }
+  }
+
+  @media (max-width: 650px) {
+    .header { flex-wrap: wrap; padding: 18px 5%; }
+    nav { order: 3; width: 100%; justify-content: space-between; gap: 10px; }
+    nav a { font-size: 11px; }
+    .youtube { padding: 11px 13px; }
+    .hero { grid-template-columns: 1fr; padding: 65px 6%; }
+    .hero-card { min-height: 230px; }
+    .infinity { font-size: 95px; }
+    .intro, .tutorials { grid-template-columns: 1fr; gap: 20px; padding: 60px 6%; }
+    .platforms { padding: 60px 6%; }
+    .section-heading { display: block; }
+    .grid { grid-template-columns: 1fr; }
+    .category-card { min-height: 220px; }
+    .notice { margin: 35px 6%; }
+    footer { padding: 30px 6%; }
+  }
+</style>
