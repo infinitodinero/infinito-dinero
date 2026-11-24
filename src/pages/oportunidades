@@ -1,1 +1,449 @@
 
+---
+const categorias = [
+  {
+    id: "encuestas",
+    numero: "01",
+    icono: "▤",
+    titulo: "Encuestas remuneradas",
+    descripcion: "Plataformas que recompensan por responder encuestas y estudios de mercado."
+  },
+  {
+    id: "apps",
+    numero: "02",
+    icono: "▣",
+    titulo: "Aplicaciones para ganar dinero",
+    descripcion: "Aplicaciones que ofrecen recompensas por realizar actividades y probar servicios."
+  },
+  {
+    id: "microtareas",
+    numero: "03",
+    icono: "⌘",
+    titulo: "Microtareas y trabajos online",
+    descripcion: "Pequeños trabajos digitales y tareas que puedes realizar por Internet."
+  },
+  {
+    id: "faucets",
+    numero: "04",
+    icono: "₿",
+    titulo: "Faucets y criptomonedas",
+    descripcion: "Faucets, wallets y plataformas de recompensas en criptomonedas."
+  },
+  {
+    id: "afiliados",
+    numero: "05",
+    icono: "↗",
+    titulo: "Programas de afiliados",
+    descripcion: "Programas que permiten obtener comisiones recomendando productos y servicios."
+  },
+  {
+    id: "otras",
+    numero: "06",
+    icono: "∞",
+    titulo: "Otras oportunidades",
+    descripcion: "Otras alternativas para explorar diferentes formas de generar ingresos online."
+  }
+];
+---
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Descubre oportunidades para ganar dinero por Internet con Infinito Dinero." />
+  <meta name="theme-color" content="#080d1b" />
+  <title>Oportunidades | Infinito Dinero</title>
+
+  <style>
+    :root {
+      --fondo: #080d1b;
+      --panel: #111d33;
+      --azul: #35a6ff;
+      --dorado: #f3bd4f;
+      --texto: #f4f7fc;
+      --muted: #a8b5ca;
+      --borde: #263a59;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--fondo);
+      color: var(--texto);
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .contenedor {
+      width: min(1180px, 90%);
+      margin: auto;
+    }
+
+    header {
+      background: #080d1b;
+      border-bottom: 1px solid var(--borde);
+      padding: 18px 0;
+    }
+
+    .navegacion {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 23px;
+      font-weight: 900;
+      letter-spacing: 1px;
+    }
+
+    .logo span {
+      color: var(--dorado);
+    }
+
+    nav {
+      display: flex;
+      gap: 23px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #d2dced;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: var(--dorado);
+    }
+
+    .hero {
+      padding: 85px 0;
+      background:
+        radial-gradient(circle at 85% 40%, #153967 0%, transparent 42%),
+        linear-gradient(120deg, #080d1b, #10213c);
+      border-bottom: 1px solid var(--borde);
+    }
+
+    .etiqueta {
+      color: var(--azul);
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: clamp(38px, 5vw, 60px);
+      line-height: 1.1;
+      margin: 20px 0;
+    }
+
+    h1 span {
+      color: var(--dorado);
+    }
+
+    .introduccion {
+      max-width: 720px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .boton {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 13px 22px;
+      border-radius: 9px;
+      background: linear-gradient(110deg, #ffe08a, #d99522);
+      color: #111827;
+      font-weight: bold;
+    }
+
+    .seccion {
+      padding: 70px 0;
+    }
+
+    .seccion h2 {
+      font-size: 34px;
+      margin-bottom: 12px;
+    }
+
+    .subtitulo {
+      color: var(--muted);
+      margin-bottom: 35px;
+      max-width: 650px;
+    }
+
+    .rejilla {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .tarjeta {
+      display: block;
+      background: linear-gradient(145deg, #13213a, #0e1728);
+      border: 1px solid var(--borde);
+      border-radius: 17px;
+      padding: 25px;
+      transition: .25s;
+    }
+
+    .tarjeta:hover {
+      transform: translateY(-5px);
+      border-color: var(--azul);
+      box-shadow: 0 12px 30px #006dce22;
+    }
+
+    .icono {
+      font-size: 32px;
+      color: var(--dorado);
+      margin-bottom: 12px;
+    }
+
+    .numero {
+      color: var(--azul);
+      font-size: 11px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    .tarjeta h3 {
+      font-size: 19px;
+      margin: 10px 0;
+    }
+
+    .tarjeta p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .enlace {
+      color: var(--azul);
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .informacion {
+      padding: 25px;
+      background: var(--panel);
+      border: 1px solid #8e6c30;
+      border-radius: 15px;
+    }
+
+    .informacion h3 {
+      color: var(--dorado);
+      margin-top: 0;
+    }
+
+    .informacion p {
+      color: var(--muted);
+      margin-bottom: 0;
+    }
+
+    footer {
+      padding: 35px 0;
+      background: #060a13;
+      border-top: 1px solid var(--borde);
+      text-align: center;
+    }
+
+    footer p {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media(max-width: 850px) {
+      .rejilla {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media(max-width: 600px) {
+      .rejilla {
+        grid-template-columns: 1fr;
+      }
+
+      .navegacion {
+        justify-content: center;
+      }
+
+      nav {
+        justify-content: center;
+        gap: 14px;
+      }
+
+      .hero {
+        padding: 60px 0;
+      }
+
+      .seccion {
+        padding: 50px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="contenedor navegacion">
+      <a href="/" class="logo">∞ INFINITO <span>DINERO</span></a>
+
+      <nav>
+        <a href="/">Inicio</a>
+        <a href="/oportunidades/">Oportunidades</a>
+        <a href="/#pagos">Pagos</a>
+        <a href="/#trading">Trading</a>
+        <a href="/#ranking">Ranking</a>
+        <a href="/#comunidad">Comunidad</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div class="contenedor">
+        <span class="etiqueta">Explora · Compara · Aprende</span>
+
+        <h1>
+          Encuentra tu próxima
+          <span>oportunidad online</span>
+        </h1>
+
+        <p class="introduccion">
+          Descubre diferentes formas de generar ingresos por Internet.
+          Explora plataformas, aplicaciones y servicios, conoce cómo
+          funcionan y aprende a valorar cada oportunidad antes de empezar.
+        </p>
+
+        <a href="#categorias" class="boton">
+          DESCUBRIR OPORTUNIDADES ↓
+        </a>
+      </div>
+    </section>
+
+    <section class="seccion" id="categorias">
+      <div class="contenedor">
+
+        <span class="etiqueta">Todas las opciones</span>
+
+        <h2>Explora nuestras categorías</h2>
+
+        <p class="subtitulo">
+          Encuentra la modalidad que más te interesa.
+          Iremos incorporando nuevas plataformas, análisis y tutoriales.
+        </p>
+
+        <div class="rejilla">
+
+          {categorias.map((categoria) => (
+            <a href={`#${categoria.id}`} class="tarjeta">
+              <div class="icono">{categoria.icono}</div>
+
+              <span class="numero">
+                CATEGORÍA {categoria.numero}
+              </span>
+
+              <h3>{categoria.titulo}</h3>
+
+              <p>{categoria.descripcion}</p>
+
+              <span class="enlace">
+                EXPLORAR →
+              </span>
+            </a>
+          ))}
+
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion" style="background:#0d1729">
+      <div class="contenedor">
+
+        <span class="etiqueta">Conoce las posibilidades</span>
+
+        <h2>¿Qué encontrarás en cada sección?</h2>
+
+        <p class="subtitulo">
+          Información organizada para conocer las plataformas y
+          comprender sus condiciones.
+        </p>
+
+        <div class="rejilla">
+
+          {categorias.map((categoria) => (
+            <article class="tarjeta" id={categoria.id}>
+              <div class="icono">{categoria.icono}</div>
+
+              <h3>{categoria.titulo}</h3>
+
+              <p>{categoria.descripcion}</p>
+
+              <span class="numero">
+                PRÓXIMAMENTE MÁS CONTENIDO
+              </span>
+            </article>
+          ))}
+
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion">
+      <div class="contenedor">
+        <div class="informacion">
+          <h3>Información clara y sin falsas promesas</h3>
+
+          <p>
+            Las oportunidades online no garantizan ingresos.
+            Los resultados dependen de cada plataforma, del país,
+            del tiempo dedicado y de sus condiciones.
+            Nuestro objetivo es ofrecer información clara y ayudarte
+            a conocer cada alternativa.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="contenedor">
+
+      <a href="/" class="logo">
+        ∞ INFINITO <span>DINERO</span>
+      </a>
+
+      <p>
+        Información, guías y oportunidades para explorar
+        el mundo de los ingresos por Internet.
+      </p>
+
+      <p>
+        © {new Date().getFullYear()} Infinito Dinero.
+        Todos los derechos reservados.
+      </p>
+
+    </div>
+  </footer>
+
+</body>
+</html>
