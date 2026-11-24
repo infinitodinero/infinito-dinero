@@ -1,0 +1,276 @@
+---
+const categories = [
+  {
+    id: "encuestas",
+    number: "01",
+    icon: "▤",
+    title: "Encuestas remuneradas",
+    tag: "OPINAR Y PARTICIPAR",
+    description: "Plataformas que recompensan por responder estudios de mercado y cuestionarios.",
+    detail: "Aquí reuniremos plataformas de encuestas, requisitos de registro, países admitidos, métodos de cobro y consejos para aprovechar mejor el tiempo.",
+    examples: ["Requisitos y países disponibles", "Cómo funcionan los puntos y recompensas", "Mínimos de pago y métodos de cobro"],
+  },
+  {
+    id: "apps",
+    number: "02",
+    icon: "▣",
+    title: "Aplicaciones para ganar dinero",
+    tag: "MÓVIL Y RECOMPENSAS",
+    description: "Aplicaciones que ofrecen recompensas por probar funciones, realizar actividades o utilizar servicios.",
+    detail: "Analizaremos qué ofrece cada aplicación, qué acciones pide, cómo se acumulan las recompensas y qué condiciones hay que revisar antes de empezar.",
+    examples: ["Aplicaciones de recompensas", "Pruebas de aplicaciones y servicios", "Condiciones, límites y retiradas"],
+  },
+  {
+    id: "microtareas",
+    number: "03",
+    icon: "⌘",
+    title: "Microtareas y trabajos online",
+    tag: "TAREAS DIGITALES",
+    description: "Pequeñas tareas digitales, trabajos puntuales y servicios que se pueden realizar por Internet.",
+    detail: "Esta categoría recogerá plataformas de microtrabajos y tareas sencillas, explicadas con ejemplos y una valoración realista del tiempo que requieren.",
+    examples: ["Tipos de tareas disponibles", "Cómo empezar y completar trabajos", "Comisiones, pagos y disponibilidad"],
+  },
+  {
+    id: "faucets",
+    number: "04",
+    icon: "₿",
+    title: "Faucets y criptomonedas",
+    tag: "CRYPTO Y WALLETS",
+    description: "Faucets, wallets, recompensas en criptomonedas y servicios relacionados.",
+    detail: "Explicaremos cómo funcionan las faucets y las wallets, cómo se reciben y gestionan las recompensas y qué costes o riesgos conviene conocer.",
+    examples: ["Faucets y acumulación de recompensas", "Wallets y transferencias", "Comisiones, redes y seguridad"],
+  },
+  {
+    id: "afiliados",
+    number: "05",
+    icon: "↗",
+    title: "Programas de afiliados",
+    tag: "RECOMENDACIONES",
+    description: "Programas que permiten obtener comisiones por recomendar productos o servicios.",
+    detail: "Publicaremos guías sobre el funcionamiento de los enlaces de afiliado, las condiciones de cada programa y las formas correctas de promocionarlos.",
+    examples: ["Cómo funcionan los enlaces", "Comisiones y condiciones", "Buenas prácticas de promoción"],
+  },
+  {
+    id: "otras",
+    number: "06",
+    icon: "∞",
+    title: "Otras oportunidades",
+    tag: "NUEVAS ALTERNATIVAS",
+    description: "Otras formas de generar ingresos online que no encajan en las categorías anteriores.",
+    detail: "Un espacio para explorar nuevas opciones. Cada propuesta se revisará antes de incorporarla y se explicará con claridad qué ofrece y qué esfuerzo requiere.",
+    examples: ["Nuevas plataformas y servicios", "Modelos de ingresos digitales", "Alternativas en fase de revisión"],
+  },
+];
+---
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Descubre oportunidades para ganar dinero por Internet: encuestas, aplicaciones, microtareas, faucets, criptomonedas y afiliación. Guías y análisis en Infinito Dinero." />
+  <meta name="theme-color" content="#080d1b" />
+  <title>Oportunidades para ganar dinero por Internet | Infinito Dinero</title>
+  <style>
+    :root {
+      --bg:#080d1b; --bg2:#0d1629; --panel:#111d33; --panel2:#14233d;
+      --text:#f4f7fc; --muted:#a8b5ca; --blue:#35a6ff; --blue2:#1675d1;
+      --gold:#f3bd4f; --gold2:#d99522; --line:#263a59; --green:#43d39e;
+      --radius:18px; --max:1180px;
+    }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; scroll-padding-top:96px; }
+    body { margin:0; background:var(--bg); color:var(--text); font-family:Inter,system-ui,-apple-system,Segoe UI,Arial,sans-serif; line-height:1.6; }
+    a { color:inherit; text-decoration:none; }
+    a:focus-visible, button:focus-visible { outline:3px solid var(--gold); outline-offset:3px; }
+    .container { width:min(var(--max),90%); margin:auto; }
+    .topbar { position:sticky; top:0; z-index:20; background:rgba(8,13,27,.95); backdrop-filter:blur(14px); border-bottom:1px solid rgba(65,100,148,.35); }
+    .navwrap { min-height:76px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
+    .brand { display:flex; align-items:center; gap:10px; font-weight:900; letter-spacing:.8px; white-space:nowrap; }
+    .brandmark { font-size:37px; line-height:1; color:var(--gold); text-shadow:0 0 22px #168bff66; }
+    .brand b { color:var(--gold); }
+    .navlinks { display:flex; align-items:center; gap:clamp(12px,2vw,25px); }
+    .navlinks a { font-size:13px; color:#d2dced; font-weight:650; transition:.2s; }
+    .navlinks a:hover, .navlinks a.active { color:var(--gold); }
+    .navsocial { display:flex; gap:8px; }
+    .social { font-size:12px; font-weight:750; padding:9px 12px; border-radius:9px; background:#172640; border:1px solid var(--line); }
+    .social.yt { background:#a92335; border-color:#c33b4c; }
+    .social.tg { background:#126b9c; border-color:#238ac0; }
+    .menu-btn { display:none; background:transparent; border:1px solid var(--line); color:white; border-radius:9px; padding:8px 11px; }
+    .hero { position:relative; overflow:hidden; padding:76px 0 68px; background:radial-gradient(ellipse at 78% 35%,#153967 0,transparent 43%),linear-gradient(120deg,#080d1b,#0c1830 65%,#080d1b); border-bottom:1px solid #1e3452; }
+    .hero:after { content:""; position:absolute; width:420px; height:420px; border:1px solid #2d83d522; border-radius:50%; right:-100px; top:15px; box-shadow:0 0 0 35px #2d83d50b,0 0 0 75px #2d83d508; pointer-events:none; }
+    .hero-inner { position:relative; z-index:1; max-width:850px; }
+    .eyebrow { display:inline-flex; align-items:center; gap:9px; color:var(--blue); font-size:11px; font-weight:850; letter-spacing:2px; text-transform:uppercase; }
+    .eyebrow:before { content:""; width:22px; height:2px; background:var(--gold); }
+    h1 { font-size:clamp(38px,5vw,60px); line-height:1.08; letter-spacing:-2px; margin:18px 0; }
+    h1 span { color:var(--gold); }
+    .lead { font-size:16px; line-height:1.85; color:var(--muted); max-width:720px; margin:0; }
+    .hero-actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:27px; }
+    .btn { display:inline-flex; justify-content:center; align-items:center; gap:9px; padding:12px 18px; border-radius:10px; font-size:13px; font-weight:800; transition:transform .2s,filter .2s; }
+    .btn:hover { transform:translateY(-2px); filter:brightness(1.08); }
+    .btn-primary { color:#111827; background:linear-gradient(115deg,#ffe08a,var(--gold2)); box-shadow:0 8px 25px #d9952228; }
+    .btn-secondary { border:1px solid #34547e; background:#10203a; color:#e6efff; }
+    .section { padding:70px 0; }
+    .section.alt { background:linear-gradient(110deg,#0d1729,#0b1220); border-block:1px solid #1e3452; }
+    .section-head { display:flex; align-items:end; justify-content:space-between; gap:28px; margin-bottom:30px; }
+    h2 { font-size:clamp(27px,3.4vw,39px); letter-spacing:-1.1px; line-height:1.15; margin:12px 0; }
+    .section-head p, .section-intro { color:var(--muted); font-size:14px; max-width:550px; margin:0; }
+    .cards { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:17px; }
+    .card { padding:23px; border:1px solid var(--line); border-radius:var(--radius); background:linear-gradient(145deg,#13213a,#0e1728); min-height:260px; transition:.22s; display:flex; flex-direction:column; }
+    .card:hover { transform:translateY(-4px); border-color:#398fd5; box-shadow:0 15px 35px #006dce18; }
+    .card-icon { width:48px; height:48px; display:grid; place-items:center; border-radius:13px; background:#1b3150; color:var(--gold); font-size:25px; margin-bottom:17px; }
+    .card small { font-size:9px; letter-spacing:1.5px; color:#8ea4c3; font-weight:850; }
+    .card h3 { font-size:19px; margin:8px 0; line-height:1.3; }
+    .card p { font-size:13px; color:var(--muted); line-height:1.7; margin:0 0 18px; }
+    .card-link { margin-top:auto; color:#65bdff; font-size:12px; font-weight:800; }
+    .detail-list { display:grid; gap:18px; }
+    .detail { display:grid; grid-template-columns:76px 1fr; gap:22px; padding:25px; border:1px solid var(--line); border-radius:18px; background:linear-gradient(145deg,#13213a,#0e1728); scroll-margin-top:100px; }
+    .detail-number { width:58px; height:58px; display:grid; place-items:center; border:1px solid #8e6c30; border-radius:15px; color:var(--gold); font-size:17px; font-weight:900; background:#1a2940; }
+    .detail h3 { font-size:21px; margin:0 0 8px; }
+    .detail p { color:var(--muted); font-size:14px; margin:0 0 15px; max-width:850px; }
+    .detail ul { display:flex; flex-wrap:wrap; gap:9px; list-style:none; padding:0; margin:0; }
+    .detail li { font-size:11px; color:#d8e5f6; border:1px solid #30486b; background:#0d192c; border-radius:30px; padding:7px 11px; }
+    .notice { border:1px solid #8e6c30; border-radius:18px; padding:24px; background:linear-gradient(120deg,#172944,#111a2b); }
+    .notice strong { color:var(--gold); display:block; margin-bottom:7px; }
+    .notice p { color:var(--muted); font-size:13px; margin:0; }
+    footer { padding:38px 0 24px; background:#060a13; border-top:1px solid #20334f; text-align:center; }
+    footer .brand { justify-content:center; }
+    footer p { color:#8fa0b9; font-size:12px; }
+    .footer-links { display:flex; justify-content:center; flex-wrap:wrap; gap:20px; margin:18px 0; }
+    .footer-links a { font-size:12px; color:#b8c7dc; }
+    .footer-links a:hover { color:var(--gold); }
+    footer .copyright { display:block; border-top:1px solid #1b2a40; padding-top:17px; margin-top:20px; color:#71839d; font-size:11px; }
+    @media(max-width:980px) { .navwrap { flex-wrap:wrap; padding:13px 0; } .navlinks { order:3; width:100%; justify-content:center; flex-wrap:wrap; } .cards { grid-template-columns:repeat(2,minmax(0,1fr)); } .navsocial { margin-left:auto; } }
+    @media(max-width:680px) {
+      .container { width:min(92%,var(--max)); } .navwrap { min-height:65px; } .menu-btn { display:block; }
+      .navlinks { display:none; align-items:stretch; flex-direction:column; gap:0; padding:8px 0 12px; }
+      .navlinks.open { display:flex; } .navlinks a { padding:10px 4px; border-top:1px solid #1b2d48; } .navsocial { display:none; }
+      .hero { padding:57px 0 52px; } .section { padding:55px 0; } .section-head { display:block; } .section-head p { margin-top:12px; }
+      .cards { grid-template-columns:1fr; } .card { min-height:0; } .detail { grid-template-columns:1fr; gap:14px; padding:20px; }
+      h1 { letter-spacing:-1.4px; }
+    }
+    @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } *,*:before,*:after { transition:none!important; } }
+  </style>
+</head>
+<body>
+  <header class="topbar" id="inicio">
+    <div class="container navwrap">
+      <a class="brand" href="/" aria-label="Infinito Dinero, inicio"><span class="brandmark">∞</span><span>INFINITO <b>DINERO</b></span></a>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mainNav">☰ Menú</button>
+      <nav class="navlinks" id="mainNav" aria-label="Menú principal">
+        <a href="/">Inicio</a>
+        <a class="active" href="/oportunidades/" aria-current="page">Oportunidades</a>
+        <a href="/#pagos">Pagos</a>
+        <a href="/#trading">Trading</a>
+        <a href="/#ranking">Ranking Infinito</a>
+        <a href="/#comunidad">Comunidad</a>
+      </nav>
+      <div class="navsocial">
+        <a class="social yt" href="https://youtube.com/@infinitodinero" target="_blank" rel="noopener noreferrer">▶ YouTube</a>
+        <a class="social tg" href="https://t.me/dineroayuda" target="_blank" rel="noopener noreferrer">➤ Telegram</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <span class="eyebrow">Explora · Compara · Aprende</span>
+        <h1>Encuentra tu próxima <span>oportunidad</span> online.</h1>
+        <p class="lead">Descubre distintas formas de generar ingresos por Internet. Aquí reunimos plataformas, aplicaciones y servicios, con explicaciones claras para que puedas conocer cómo funcionan antes de decidir.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#categorias">Ver categorías <span>↓</span></a>
+          <a class="btn btn-secondary" href="/">← Volver a inicio</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="categorias">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Todas las opciones</span>
+            <h2>¿Qué tipo de oportunidad buscas?</h2>
+          </div>
+          <p>Explora las categorías. Iremos incorporando análisis y guías específicas a medida que publiquemos nuevos contenidos.</p>
+        </div>
+        <div class="cards">
+          {categories.map((category) => (
+            <a class="card" href={`#${category.id}`}>
+              <span class="card-icon" aria-hidden="true">{category.icon}</span>
+              <small>{category.tag}</small>
+              <h3>{category.title}</h3>
+              <p>{category.description}</p>
+              <span class="card-link">Explorar categoría →</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="guias">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Conoce cada categoría</span>
+            <h2>Oportunidades explicadas con claridad</h2>
+          </div>
+          <p>No todas las opciones funcionan igual. Antes de registrarte, conviene conocer los requisitos, el tiempo necesario y las condiciones de cada servicio.</p>
+        </div>
+        <div class="detail-list">
+          {categories.map((category) => (
+            <article class="detail" id={category.id}>
+              <div class="detail-number">{category.number}</div>
+              <div>
+                <h3>{category.title}</h3>
+                <p>{category.detail}</p>
+                <ul>
+                  {category.examples.map((example) => <li>{example}</li>)}
+                </ul>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="notice">
+          <strong>Información antes que promesas</strong>
+          <p>Las oportunidades online no garantizan ingresos. Los resultados dependen de cada plataforma, del país, del tiempo dedicado y de sus condiciones. Nuestro objetivo es explicar cómo funciona cada opción, señalar sus límites y ayudarte a valorar si encaja contigo.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <a class="brand" href="/"><span class="brandmark">∞</span><span>INFINITO <b>DINERO</b></span></a>
+      <p>Información, guías y experiencias para explorar oportunidades en Internet.</p>
+      <nav class="footer-links" aria-label="Enlaces del pie de página">
+        <a href="/">Inicio</a>
+        <a href="/oportunidades/">Oportunidades</a>
+        <a href="/#pagos">Pagos</a>
+        <a href="/#trading">Trading</a>
+        <a href="/#comunidad">Comunidad</a>
+      </nav>
+      <span class="copyright">© {new Date().getFullYear()} Infinito Dinero. Todos los derechos reservados.</span>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const mainNav = document.getElementById('mainNav');
+    menuBtn?.addEventListener('click', () => {
+      const isOpen = mainNav?.classList.toggle('open') ?? false;
+      menuBtn.setAttribute('aria-expanded', String(isOpen));
+    });
+    mainNav?.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        mainNav.classList.remove('open');
+        menuBtn?.setAttribute('aria-expanded', 'false');
+      });
+    });
+  </script>
+</body>
+</html>
